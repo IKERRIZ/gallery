@@ -18,3 +18,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category
+
+class Image(models.Model):
+    title =models.CharField(max_length =60)
+    post_date = models.DateTimeField(auto_now_add=True)
+    location= models.ForeignKey(Location)
+    category= models.ForeignKey(Category)
+    image = models.ImageField(upload_to ='images/' ,default='DEFAULT VALUE')
+
