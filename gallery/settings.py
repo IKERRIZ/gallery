@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap3'
     'galleria.apps.GalleriaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,6 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'gallery',
+        'USER':'moringa',
+        'PASSWORD':'4567',
     }
 }
 
