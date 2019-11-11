@@ -10,14 +10,15 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
-    def delete_location(self):
-        self.delete()
+    @classmethod
+    def delete_location(cls,location):
+        cls.objects.filter(location=location).delete()
 
 class Category(models.Model):
-    category = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.category
+        return self.name
 
     def save_category(self):
         self.save()
@@ -28,13 +29,14 @@ class Category(models.Model):
         return categ
 
     @classmethod
-    def delete_category(cls,category):
-        cls.objects.filter(category=category).delete()
+    def delete_category(cls,name):
+        cls.objects.filter(name=name).delete()
 
 
 class Image(models.Model):
     title =models.CharField(max_length =60)
     post_date = models.DateTimeField(auto_now_add=True)
+    description = models.TextField(max_length=60,default='DEFAULT VALUE')
     location= models.ForeignKey(Location)
     category= models.ForeignKey(Category)
     image = models.ImageField(upload_to ='images/' ,default='DEFAULT VALUE')
@@ -52,6 +54,6 @@ class Image(models.Model):
  
     @classmethod 
     def search_by_category(cls,search_term):
-        images= cls.objects.filter(category_category__icontains=search_term)
+        images= cls.objects.filter(category__name__icontains=search_term)
 
         return images
