@@ -1,6 +1,6 @@
 ## Galleria
 ## Description
-Gallerie is a platform where users can display their photos for others to see, they can share the photos by coping the photo link and also add different categories of photo..
+Galleria is a platform where users can display their photos for others to see, they can share the photos by coping the photo link and also add different categories of photo..
 ## Author
 IKERRIZ
 
