@@ -26,21 +26,21 @@ class LocationTestClass(TestCase):
 
 class Category(TestCase):
 
-    def setup(self):
-        self.sports= Category(Category='sports')
+    def setUp(self):
+        self.food= Category(categories='food')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.sports,Category))
+        self.assertTrue(isinstance(self.food,Category))
 
     def tearDown(self):
         Category.objects.all().delete()
 
     def test_save_method(self):
-        self.sports.save_category()
+        self.food.save_category()
         category = Category.objects.all()
         self.assertTrue(len(category)>0)
 
     def test_delete_method(self):
-        self.sports.delete_location('sports')
+        self.food.delete_location('food')
         category = Category.objects.all()
-        sports.assertTrue(len(category)==0)
+        food.assertTrue(len(category)==0)

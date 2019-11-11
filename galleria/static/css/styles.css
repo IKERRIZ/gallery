@@ -1,9 +1,11 @@
 .heap{
-    color:#0000ff;
+    color:aqua;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
 .toy{
-    background-image: url('https://cdn.pixabay.com/photo/2019/10/02/14/09/jam-4521023__340.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk3ak-2xYDC7AXKqFksYoR8FUA_CsCcUaZfSqFrLxH6QZmwc_beQ&s');
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 450px;
-} 
+    background-repeat: repeat;
+    height: 750px;
+}
